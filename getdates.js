@@ -1,7 +1,5 @@
-const today = new Date();
+const yearSpan = document.getElementById("year");
+const currentYear = new Date().getFullYear();
 
-// Current year (for footer)
-document.getElementById("currentyear").textContent = today.getFullYear();
+yearSpan.textContent = currentYear;.
 
-// Last modified date
-document.getElementById("lastModified").textContent = document.lastModified;

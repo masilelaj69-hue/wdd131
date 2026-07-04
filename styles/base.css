@@ -1,51 +1,67 @@
 body {
-  margin: 0;
   font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
 }
 
-/* HEADER - FLEX REQUIRED */
+/* HEADER */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: #333;
   color: white;
-  padding: 10px;
+  padding: 1rem;
+  text-align: center;
 }
 
-/* NAV LINKS */
+/* NAV FLEXBOX (required) */
+nav {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
 nav a {
   color: white;
-  margin: 0 8px;
   text-decoration: none;
+  padding: 0.5rem;
 }
 
-/* HOVER REQUIRED */
+/* HOVER (required) */
 nav a:hover {
-  color: yellow;
+  background-color: white;
+  color: #333;
+  border-radius: 5px;
 }
 
-/* MAIN - GRID REQUIRED */
+/* MAIN GRID (required) */
 main {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 15px;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
 /* CARDS */
 .card {
-  background: #f2f2f2;
-  padding: 20px;
-  text-align: center;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
-/* FOOTER - FLEX REQUIRED */
+/* FOOTER */
 footer {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  text-align: center;
+  padding: 1rem;
   background: #333;
   color: white;
-  padding: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  main {
+    grid-template-columns: 1fr;
+  }
 }
