@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+/* HEADER - FLEX REQUIRED */
 header {
   display: flex;
   justify-content: space-between;
@@ -7,27 +13,39 @@ header {
   padding: 10px;
 }
 
-main {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 10px;
+/* NAV LINKS */
+nav a {
+  color: white;
+  margin: 0 8px;
+  text-decoration: none;
 }
 
+/* HOVER REQUIRED */
+nav a:hover {
+  color: yellow;
+}
+
+/* MAIN - GRID REQUIRED */
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 15px;
+}
+
+/* CARDS */
+.card {
+  background: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+/* FOOTER - FLEX REQUIRED */
 footer {
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #333;
+  gap: 20px;
+  background: #333;
   color: white;
   padding: 10px;
-}
-
-/* REQUIRED HOVER */
-nav a:hover {
-  color: red;
-}
-
-main div:hover {
-  transform: scale(1.05);
 }
