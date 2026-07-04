@@ -1,67 +1,107 @@
-body {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f4f4f4;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* HEADER */
-header {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+body{
+    font-family:"Roboto",sans-serif;
+    background:#f4f4f4;
 }
 
-/* NAV FLEXBOX (required) */
-nav {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
+header{
+    background:#1d3557;
+    color:white;
+    padding:20px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem;
+#course-title{
+    display:block;
+    text-align:center;
+    font-size:2rem;
+    font-weight:bold;
+    margin-bottom:20px;
 }
 
-/* HOVER (required) */
-nav a:hover {
-  background-color: white;
-  color: #333;
-  border-radius: 5px;
+nav{
+    display:flex;
+    justify-content:center;
+    gap:30px;
 }
 
-/* MAIN GRID (required) */
-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-/* CARDS */
-.card {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
+nav a:hover{
+    color:yellow;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #333;
-  color: white;
+main{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 700px) {
-  main {
-    grid-template-columns: 1fr;
-  }
+main h1{
+    grid-column:1/2;
+    font-size:3rem;
+    align-self:start;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+}
+
+.card h2{
+    margin-bottom:15px;
+}
+
+.card img{
+    width:220px;
+    display:block;
+    margin:15px auto;
+}
+
+.card p{
+    line-height:1.6;
+}
+
+.card ul{
+    margin-left:20px;
+}
+
+footer{
+    background:#1d3557;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:20px;
+}
+
+@media screen and (max-width:768px){
+
+main{
+grid-template-columns:1fr;
+}
+
+main h1{
+grid-column:1;
+text-align:center;
+}
+
+nav{
+flex-direction:column;
+align-items:center;
+}
+
 }
