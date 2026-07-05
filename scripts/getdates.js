@@ -1,16 +1,14 @@
+
 "use strict";
 
 /*
   WDD 131 - Dynamic Web Fundamentals
-  This script updates the footer year dynamically
+  Updates the current year and last modified date in the footer.
 */
 
-// Get the span element where the year will go
-const yearSpan = document.getElementById("year");
+// Current Year
+document.getElementById("currentyear").textContent = new Date().getFullYear();
 
-// Get current year
-const currentYear = new Date().getFullYear();
-
-// Insert year into HTML
-yearSpan.textContent = currentYear;
-
+// Last Modified Date
+document.getElementById("lastModified").textContent =
+`Last Modified: ${document.lastModified}`;

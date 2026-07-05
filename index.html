@@ -3,29 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 - Dynamic Web Fundamentals</title>
 
-    <meta name="description" content="WDD 131 Dynamic Web Fundamentals assignment page demonstrating HTML, CSS, responsive design, and JavaScript skills.">
+    <title>WDD 131 - Dynamic Web Fundamentals - Julia Masilela</title>
+
+    <meta name="description" content="WDD 131 Dynamic Web Fundamentals home page by Julia Masilela demonstrating HTML, CSS, responsive web design, accessibility, and JavaScript.">
     <meta name="author" content="Julia Masilela">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/base.css">
 
     <script src="scripts/getdates.js" defer></script>
 </head>
+
 <body>
 
 <header>
-    <span id="course-title">WDD 131 - Dynamic Web Fundamentals</span>
+    <span id="course-title">WDD 131: Dynamic Web Fundamentals</span>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://byupw.instructure.com/" target="_blank" rel="noopener">Canvas</a>
+        <a href="https://github.com/masilelaj69-hue" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.churchofjesuschrist.org/study/scriptures" target="_blank" rel="noopener">Scripture</a>
     </nav>
 </header>
 
@@ -36,45 +39,89 @@
     <section class="card">
         <h2>About Me</h2>
 
-        <img src="images/profile.webp"
-             alt="Portrait of Julia Masilela"
-             width="200">
+        <img
+            src="images/profile.webp"
+            alt="Portrait of Julia Masilela"
+            width="200"
+            height="200"
+            loading="lazy"
+        >
 
         <p>
-            Hello! My name is Julia Masilela. I am studying WDD 131
-            Dynamic Web Fundamentals and learning HTML, CSS, and JavaScript
-            to build responsive and accessible web pages.
+            Hello! My name is Julia Masilela. I am currently studying
+            WDD 131: Dynamic Web Fundamentals. I enjoy learning HTML,
+            CSS, and JavaScript so I can build responsive, accessible,
+            and user-friendly websites. I am excited to continue growing
+            my web development skills throughout this course.
         </p>
     </section>
 
     <section class="card">
-        <h2>South Africa</h2>
+        <h2>My Country</h2>
 
-        <img src="images/south-africa.webp"
-             alt="Flag of South Africa"
-             width="200">
+        <img
+            src="images/south-africa.webp"
+            alt="Flag of South Africa"
+            width="200"
+            height="130"
+            loading="lazy"
+        >
 
         <p>
-            South Africa is known for its beautiful landscapes, rich cultures,
-            and amazing wildlife. It has three capital cities and eleven
-            official languages.
+            South Africa is known as the Rainbow Nation because of its
+            rich cultural diversity. It has beautiful landscapes,
+            incredible wildlife, eleven official languages, and three
+            capital cities. I am proud to call South Africa my home.
         </p>
     </section>
 
     <section class="card">
-        <h2>Web Resources</h2>
+        <h2>Web Dev Resources</h2>
 
         <ul>
-            <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></li>
-            <li><a href="https://github.com/" target="_blank">GitHub</a></li>
-            <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
+            <li>
+                <a href="https://developer.mozilla.org/"
+                   target="_blank"
+                   rel="noopener">
+                    MDN Web Docs
+                </a>
+            </li>
+
+            <li>
+                <a href="https://github.com/"
+                   target="_blank"
+                   rel="noopener">
+                    GitHub
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.w3schools.com/"
+                   target="_blank"
+                   rel="noopener">
+                    W3Schools
+                </a>
+            </li>
+
+            <li>
+                <a href="https://css-tricks.com/"
+                   target="_blank"
+                   rel="noopener">
+                    CSS-Tricks
+                </a>
+            </li>
         </ul>
     </section>
 
 </main>
 
 <footer>
-    <p>&copy; <span id="year"></span> Julia Masilela | South Africa</p>
+    <p>
+        &copy;
+        <span id="currentyear"></span>
+        🌸 Julia Masilela 🌸 South Africa
+    </p>
+
     <p id="lastModified"></p>
 </footer>
 

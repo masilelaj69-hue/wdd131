@@ -1,107 +1,154 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* WDD 131 - Dynamic Web Fundamentals */
+/* Julia Masilela */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:"Roboto",sans-serif;
-    background:#f4f4f4;
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+    line-height: 1.6;
 }
 
-header{
-    background:#1d3557;
-    color:white;
-    padding:20px;
+/* ---------- HEADER ---------- */
+
+header {
+    background-color: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
 }
 
-#course-title{
-    display:block;
-    text-align:center;
-    font-size:2rem;
-    font-weight:bold;
-    margin-bottom:20px;
+#course-title {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-nav{
-    display:flex;
-    justify-content:center;
-    gap:30px;
+/* ---------- NAVIGATION ---------- */
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    transition: background-color .3s ease, color .3s ease;
 }
 
-nav a:hover{
-    color:yellow;
+nav a:hover {
+    background-color: white;
+    color: #1d3557;
 }
 
-main{
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
+/* ---------- MAIN ---------- */
 
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
-main h1{
-    grid-column:1/2;
-    font-size:3rem;
-    align-self:start;
+main h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #1d3557;
+    margin-bottom: 1rem;
 }
 
-.card{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,.2);
+/* ---------- CARDS ---------- */
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 8px rgba(0,0,0,.15);
 }
 
-.card h2{
-    margin-bottom:15px;
+.card h2 {
+    text-align: center;
+    color: #1d3557;
+    margin-bottom: 1rem;
 }
 
-.card img{
-    width:220px;
-    display:block;
-    margin:15px auto;
+.card img {
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    margin: 1rem auto;
+    border-radius: 8px;
 }
 
-.card p{
-    line-height:1.6;
+.card p {
+    margin-top: 1rem;
 }
 
-.card ul{
-    margin-left:20px;
+.card ul {
+    padding-left: 1.5rem;
 }
 
-footer{
-    background:#1d3557;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:20px;
+.card li {
+    margin-bottom: .75rem;
 }
 
-@media screen and (max-width:768px){
-
-main{
-grid-template-columns:1fr;
+.card a {
+    color: #1d3557;
+    text-decoration: none;
 }
 
-main h1{
-grid-column:1;
-text-align:center;
+.card a:hover {
+    text-decoration: underline;
 }
 
-nav{
-flex-direction:column;
-align-items:center;
+/* ---------- FOOTER ---------- */
+
+footer {
+    background-color: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
 }
 
+footer p {
+    margin: .5rem 0;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+
+    #course-title {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: .75rem;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 1rem;
+    }
 }
