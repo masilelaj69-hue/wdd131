@@ -1,0 +1,110 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    font-family:Roboto, sans-serif;
+}
+
+
+header{
+    background:#333;
+    color:white;
+    padding:1rem;
+    text-align:center;
+}
+
+
+#menu{
+    font-size:2rem;
+    background:none;
+    color:white;
+    border:none;
+}
+
+
+nav{
+    display:none;
+    flex-direction:column;
+}
+
+
+nav.open{
+    display:flex;
+}
+
+
+nav a{
+    color:white;
+    padding:1rem;
+    text-decoration:none;
+}
+
+
+nav a:hover{
+    background:#555;
+}
+
+
+main{
+    max-width:900px;
+    margin:auto;
+    padding:1rem;
+}
+
+
+h2{
+    text-align:center;
+    margin:1rem;
+}
+
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:1rem;
+
+}
+
+
+figure{
+
+    text-align:center;
+}
+
+
+img{
+
+    width:100%;
+
+    height:auto;
+
+}
+
+
+figcaption{
+
+    padding:.5rem;
+
+    font-weight:bold;
+
+}
+
+
+footer{
+
+    background:#333;
+
+    color:white;
+
+    text-align:center;
+
+    padding:1rem;
+
+}
