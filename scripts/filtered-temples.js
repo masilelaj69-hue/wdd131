@@ -4,7 +4,7 @@ const temples = [
         location: "Aba, Nigeria",
         dedicated: "2005-08-07",
         area: 11500,
-        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/aba-nigeria-temple/aba-nigeria-temple-2736.jpg"
+        imageUrl: "images/temple7.jpg"
     },
 
     {
@@ -12,7 +12,7 @@ const temples = [
         location: "Manti, Utah",
         dedicated: "1888-05-21",
         area: 74792,
-        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/manti-utah-temple/manti-utah-temple-2736.jpg"
+        imageUrl: "images/temple8.jpg"
     },
 
     {
@@ -20,23 +20,7 @@ const temples = [
         location: "Salt Lake City, Utah",
         dedicated: "1893-04-06",
         area: 253000,
-        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/salt-lake-temple/salt-lake-temple-2736.jpg"
-    },
-
-    {
-        templeName: "Payson Utah Temple",
-        location: "Payson, Utah",
-        dedicated: "2015-06-07",
-        area: 96630,
-        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/payson-utah-temple/payson-utah-temple-2736.jpg"
-    },
-
-    {
-        templeName: "Laie Hawaii Temple",
-        location: "Laie, Hawaii",
-        dedicated: "1919-11-27",
-        area: 42100,
-        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/laie-hawaii-temple/laie-hawaii-temple-2736.jpg"
+        imageUrl: "images/temple9.jpg"
     }
 ];
 
@@ -45,34 +29,33 @@ const gallery = document.querySelector(".gallery");
 const title = document.querySelector("#menu-title");
 
 
-function displayTemples(data) {
+function displayTemples(templesList) {
 
     gallery.innerHTML = "";
 
-    data.forEach(temple => {
+    templesList.forEach(temple => {
 
         const card = document.createElement("section");
 
         card.innerHTML = `
-        <h3>${temple.templeName}</h3>
+            <h3>${temple.templeName}</h3>
 
-        <img 
-        src="${temple.imageUrl}" 
-        alt="${temple.templeName}"
-        loading="lazy">
+            <img src="${temple.imageUrl}" 
+                 alt="${temple.templeName}"
+                 loading="lazy">
 
-        <p>Location: ${temple.location}</p>
+            <p>Location: ${temple.location}</p>
 
-        <p>Dedicated: ${temple.dedicated}</p>
+            <p>Dedicated: ${temple.dedicated}</p>
 
-        <p>Area: ${temple.area.toLocaleString()} sq ft</p>
+            <p>Area: ${temple.area.toLocaleString()} sq ft</p>
         `;
 
         gallery.appendChild(card);
 
     });
-}
 
+}
 
 
 document.querySelector("#home").addEventListener("click", () => {
@@ -133,11 +116,10 @@ document.querySelector("#small").addEventListener("click", () => {
 });
 
 
-
 document.querySelector("#year").textContent = new Date().getFullYear();
 
 document.querySelector("#lastModified").textContent =
-"Last Modified: " + document.lastModified;
+    "Last Modified: " + document.lastModified;
 
 
 displayTemples(temples);
