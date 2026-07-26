@@ -1,125 +1,105 @@
 const temples = [
-    {
-        templeName: "Aba Nigeria Temple",
-        location: "Aba, Nigeria",
-        dedicated: "2005-08-07",
-        area: 11500,
-        imageUrl: "images/temple7.jpg"
-    },
+{
+    templeName: "Aba Nigeria Temple",
+    location: "Aba, Nigeria",
+    dedicated: "2005-08-07",
+    area: 11500,
+    imageUrl: "images/aba-nigeria-temple.jpg"
+},
 
-    {
-        templeName: "Manti Utah Temple",
-        location: "Manti, Utah",
-        dedicated: "1888-05-21",
-        area: 74792,
-        imageUrl: "images/temple8.jpg"
-    },
+{
+    templeName: "Accra Ghana Temple",
+    location: "Accra, Ghana",
+    dedicated: "2004-01-11",
+    area: 17500,
+    imageUrl: "images/accra-ghana-temple.jpg"
+},
 
-    {
-        templeName: "Salt Lake Temple",
-        location: "Salt Lake City, Utah",
-        dedicated: "1893-04-06",
-        area: 253000,
-        imageUrl: "images/temple9.jpg"
-    }
-];
+{
+    templeName: "Bountiful Utah Temple",
+    location: "Bountiful, Utah",
+    dedicated: "1995-01-08",
+    area: 104000,
+    imageUrl: "images/bountiful-utah-temple.jpg"
+},
 
+{
+    templeName: "Cardston Alberta Temple",
+    location: "Cardston, Alberta",
+    dedicated: "1923-08-26",
+    area: 88919,
+    imageUrl: "images/cardston-alberta-temple.jpg"
+},
 
-const gallery = document.querySelector(".gallery");
-const title = document.querySelector("#menu-title");
+{
+    templeName: "Durban South Africa Temple",
+    location: "Durban, South Africa",
+    dedicated: "2020-02-16",
+    area: 19860,
+    imageUrl: "images/durban-temple.jpg"
+},
 
+{
+    templeName: "Kinshasa DR Congo Temple",
+    location: "Kinshasa, DR Congo",
+    dedicated: "2019-04-14",
+    area: 12000,
+    imageUrl: "images/kinshasa-temple.jpg"
+},
 
-function displayTemples(templesList) {
+{
+    templeName: "Laie Hawaii Temple",
+    location: "Laie, Hawaii",
+    dedicated: "1919-11-27",
+    area: 42100,
+    imageUrl: "images/laie-hawaii-temple.jpg"
+},
 
-    gallery.innerHTML = "";
+{
+    templeName: "Manti Utah Temple",
+    location: "Manti, Utah",
+    dedicated: "1888-05-21",
+    area: 74792,
+    imageUrl: "images/manti-utah-temple.jpg"
+},
 
-    templesList.forEach(temple => {
+{
+    templeName: "Paris France Temple",
+    location: "Paris, France",
+    dedicated: "2017-05-21",
+    area: 44000,
+    imageUrl: "images/paris-france-temple.jpg"
+},
 
-        const card = document.createElement("section");
+{
+    templeName: "Payson Utah Temple",
+    location: "Payson, Utah",
+    dedicated: "2015-06-07",
+    area: 96630,
+    imageUrl: "images/payson-utah-temple.jpg"
+},
 
-        card.innerHTML = `
-            <h3>${temple.templeName}</h3>
+{
+    templeName: "Rome Italy Temple",
+    location: "Rome, Italy",
+    dedicated: "2019-03-10",
+    area: 41010,
+    imageUrl: "images/rome-italy-temple.jpg"
+},
 
-            <img src="${temple.imageUrl}" 
-                 alt="${temple.templeName}"
-                 loading="lazy">
+{
+    templeName: "Salt Lake Temple",
+    location: "Salt Lake City, Utah",
+    dedicated: "1893-04-06",
+    area: 253000,
+    imageUrl: "images/salt-lake-temple.jpg"
+},
 
-            <p>Location: ${temple.location}</p>
-
-            <p>Dedicated: ${temple.dedicated}</p>
-
-            <p>Area: ${temple.area.toLocaleString()} sq ft</p>
-        `;
-
-        gallery.appendChild(card);
-
-    });
-
+{
+    templeName: "Tokyo Japan Temple",
+    location: "Tokyo, Japan",
+    dedicated: "1980-10-27",
+    area: 53997,
+    imageUrl: "images/tokyo-japan-temple.jpg"
 }
-
-
-document.querySelector("#home").addEventListener("click", () => {
-    title.textContent = "Home";
-    displayTemples(temples);
-});
-
-
-document.querySelector("#old").addEventListener("click", () => {
-
-    title.textContent = "Old Temples";
-
-    displayTemples(
-        temples.filter(
-            temple => new Date(temple.dedicated).getFullYear() < 1900
-        )
-    );
-
-});
-
-
-document.querySelector("#new").addEventListener("click", () => {
-
-    title.textContent = "New Temples";
-
-    displayTemples(
-        temples.filter(
-            temple => new Date(temple.dedicated).getFullYear() > 2000
-        )
-    );
-
-});
-
-
-document.querySelector("#large").addEventListener("click", () => {
-
-    title.textContent = "Large Temples";
-
-    displayTemples(
-        temples.filter(
-            temple => temple.area > 90000
-        )
-    );
-
-});
-
-
-document.querySelector("#small").addEventListener("click", () => {
-
-    title.textContent = "Small Temples";
-
-    displayTemples(
-        temples.filter(
-            temple => temple.area < 50000
-        )
-    );
-
-});
-
-
-document.querySelector("#year").textContent = new Date().getFullYear();
-
-document.querySelector("#lastModified").textContent =
-    "Last Modified: " + document.lastModified;
-
-
-displayTemples(temples);
+];
