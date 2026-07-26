@@ -6,7 +6,6 @@ const temples = [
     area: 11500,
     imageUrl: "images/aba-nigeria-temple.jpg"
 },
-
 {
     templeName: "Accra Ghana Temple",
     location: "Accra, Ghana",
@@ -14,7 +13,6 @@ const temples = [
     area: 17500,
     imageUrl: "images/accra-ghana-temple.jpg"
 },
-
 {
     templeName: "Bountiful Utah Temple",
     location: "Bountiful, Utah",
@@ -22,7 +20,6 @@ const temples = [
     area: 104000,
     imageUrl: "images/bountiful-utah-temple.jpg"
 },
-
 {
     templeName: "Cardston Alberta Temple",
     location: "Cardston, Alberta",
@@ -30,7 +27,6 @@ const temples = [
     area: 88919,
     imageUrl: "images/cardston-alberta-temple.jpg"
 },
-
 {
     templeName: "Durban South Africa Temple",
     location: "Durban, South Africa",
@@ -38,7 +34,6 @@ const temples = [
     area: 19860,
     imageUrl: "images/durban-temple.jpg"
 },
-
 {
     templeName: "Kinshasa DR Congo Temple",
     location: "Kinshasa, DR Congo",
@@ -46,7 +41,6 @@ const temples = [
     area: 12000,
     imageUrl: "images/kinshasa-temple.jpg"
 },
-
 {
     templeName: "Laie Hawaii Temple",
     location: "Laie, Hawaii",
@@ -54,7 +48,6 @@ const temples = [
     area: 42100,
     imageUrl: "images/laie-hawaii-temple.jpg"
 },
-
 {
     templeName: "Manti Utah Temple",
     location: "Manti, Utah",
@@ -62,7 +55,6 @@ const temples = [
     area: 74792,
     imageUrl: "images/manti-utah-temple.jpg"
 },
-
 {
     templeName: "Paris France Temple",
     location: "Paris, France",
@@ -70,7 +62,6 @@ const temples = [
     area: 44000,
     imageUrl: "images/paris-france-temple.jpg"
 },
-
 {
     templeName: "Payson Utah Temple",
     location: "Payson, Utah",
@@ -78,7 +69,6 @@ const temples = [
     area: 96630,
     imageUrl: "images/payson-utah-temple.jpg"
 },
-
 {
     templeName: "Rome Italy Temple",
     location: "Rome, Italy",
@@ -86,7 +76,6 @@ const temples = [
     area: 41010,
     imageUrl: "images/rome-italy-temple.jpg"
 },
-
 {
     templeName: "Salt Lake Temple",
     location: "Salt Lake City, Utah",
@@ -94,7 +83,6 @@ const temples = [
     area: 253000,
     imageUrl: "images/salt-lake-temple.jpg"
 },
-
 {
     templeName: "Tokyo Japan Temple",
     location: "Tokyo, Japan",
@@ -103,3 +91,83 @@ const temples = [
     imageUrl: "images/tokyo-japan-temple.jpg"
 }
 ];
+
+const gallery = document.querySelector(".gallery");
+const title = document.querySelector("#menu-title");
+
+function displayTemples(templesList) {
+    gallery.innerHTML = "";
+
+    templesList.forEach((temple) => {
+        const card = document.createElement("section");
+
+        card.innerHTML = `
+            <h3>${temple.templeName}</h3>
+            <img src="${temple.imageUrl}"
+                 alt="${temple.templeName}"
+                 loading="lazy">
+            <p><strong>Location:</strong> ${temple.location}</p>
+            <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+            <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+        `;
+
+        gallery.appendChild(card);
+    });
+}
+
+document.querySelector("#home").addEventListener("click", (e) => {
+    e.preventDefault();
+    title.textContent = "Home";
+    displayTemples(temples);
+});
+
+document.querySelector("#old").addEventListener("click", (e) => {
+    e.preventDefault();
+    title.textContent = "Old Temples";
+
+    displayTemples(
+        temples.filter(
+            temple => new Date(temple.dedicated).getFullYear() < 1900
+        )
+    );
+});
+
+document.querySelector("#new").addEventListener("click", (e) => {
+    e.preventDefault();
+    title.textContent = "New Temples";
+
+    displayTemples(
+        temples.filter(
+            temple => new Date(temple.dedicated).getFullYear() > 2000
+        )
+    );
+});
+
+document.querySelector("#large").addEventListener("click", (e) => {
+    e.preventDefault();
+    title.textContent = "Large Temples";
+
+    displayTemples(
+        temples.filter(
+            temple => temple.area > 90000
+        )
+    );
+});
+
+document.querySelector("#small").addEventListener("click", (e) => {
+    e.preventDefault();
+    title.textContent = "Small Temples";
+
+    displayTemples(
+        temples.filter(
+            temple => temple.area < 10000
+        )
+    );
+});
+
+document.querySelector("#year").textContent = new Date().getFullYear();
+
+document.querySelector("#lastModified").textContent =
+    "Last Modified: " + document.lastModified;
+
+displayTemples(temples);
