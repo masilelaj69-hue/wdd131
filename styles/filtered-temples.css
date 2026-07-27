@@ -1,81 +1,137 @@
-body {
-    font-family: Arial, sans-serif;
+/* ---------- Global ---------- */
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* ---------- Header ---------- */
 
 header {
-    background: #333;
+    background-color: #333;
     color: white;
     padding: 1rem;
     text-align: center;
 }
 
+header h1 {
+    margin-bottom: 1rem;
+}
+
+/* ---------- Navigation ---------- */
 
 nav {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
 }
-
 
 nav a {
     color: white;
     text-decoration: none;
+    padding: .5rem;
+    font-weight: bold;
 }
-
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: white;
+    color: #333;
+    border-radius: 5px;
 }
 
+/* ---------- Main ---------- */
 
 main {
+    max-width: 1200px;
+    margin: auto;
     padding: 1rem;
 }
 
+main h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- Gallery ---------- */
 
 .gallery {
-
     display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-    gap: 1rem;
-
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
+/* ---------- Temple Cards ---------- */
 
 section {
-
-    background: #eee;
-
-    padding: 1rem;
-
-    text-align: center;
-
+    background: white;
     border-radius: 8px;
-
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    text-align: center;
+    padding-bottom: 1rem;
 }
 
+section h3 {
+    margin: 1rem 0 .5rem;
+}
+
+section p {
+    margin: .3rem 1rem;
+    font-size: .95rem;
+}
+
+/* ---------- Images ---------- */
 
 img {
-
     width: 100%;
+    height: 250px;      /* Same height for every image */
+    object-fit: cover;  /* Prevents stretching */
+    display: block;
+}
 
-    height: auto;
+/* ---------- Footer ---------- */
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* ===========================================
+   MEDIA QUERIES (Required for WDD131)
+   =========================================== */
+
+/* Medium screens */
+
+@media screen and (min-width: 640px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
 }
 
+/* Large screens */
 
-footer {
+@media screen and (min-width: 1024px) {
 
-    background: #333;
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-    color: white;
-
-    text-align: center;
-
-    padding: 1rem;
+    nav {
+        justify-content: center;
+    }
 
 }

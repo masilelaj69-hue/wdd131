@@ -95,56 +95,90 @@ const temples = [
 const gallery = document.querySelector(".gallery");
 const title = document.querySelector("#menu-title");
 
-function displayTemples(list) {
+function displayTemples(templeList) {
+
     gallery.innerHTML = "";
 
-    list.forEach((temple) => {
+    templeList.forEach((temple) => {
+
         const card = document.createElement("section");
 
-        card.innerHTML = `
-            <h3>${temple.templeName}</h3>
-            <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
-            <p><strong>Location:</strong> ${temple.location}</p>
-            <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-            <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
-        `;
+        const name = document.createElement("h3");
+        name.textContent = temple.templeName;
+
+        const image = document.createElement("img");
+        image.src = temple.imageUrl;
+        image.alt = temple.templeName;
+        image.loading = "lazy";
+        image.width = 400;
+        image.height = 250;
+
+        const location = document.createElement("p");
+        location.innerHTML = `<strong>Location:</strong> ${temple.location}`;
+
+        const dedicated = document.createElement("p");
+        dedicated.innerHTML = `<strong>Dedicated:</strong> ${temple.dedicated}`;
+
+        const area = document.createElement("p");
+        area.innerHTML = `<strong>Area:</strong> ${temple.area.toLocaleString()} square feet`;
+
+        card.appendChild(name);
+        card.appendChild(image);
+        card.appendChild(location);
+        card.appendChild(dedicated);
+        card.appendChild(area);
 
         gallery.appendChild(card);
+
     });
+
 }
 
 displayTemples(temples);
 
-document.querySelector("#home").addEventListener("click", (e) => {
+document.querySelector("#home").addEventListener("click", function (e) {
     e.preventDefault();
     title.textContent = "Home";
     displayTemples(temples);
 });
 
-document.querySelector("#old").addEventListener("click", (e) => {
+document.querySelector("#old").addEventListener("click", function (e) {
     e.preventDefault();
     title.textContent = "Old Temples";
-    displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() < 1900));
+    displayTemples(
+        temples.filter(temple =>
+            new Date(temple.dedicated).getFullYear() < 1900
+        )
+    );
 });
 
-document.querySelector("#new").addEventListener("click", (e) => {
+document.querySelector("#new").addEventListener("click", function (e) {
     e.preventDefault();
     title.textContent = "New Temples";
-    displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() > 2000));
+    displayTemples(
+        temples.filter(temple =>
+            new Date(temple.dedicated).getFullYear() > 2000
+        )
+    );
 });
 
-document.querySelector("#large").addEventListener("click", (e) => {
+document.querySelector("#large").addEventListener("click", function (e) {
     e.preventDefault();
     title.textContent = "Large Temples";
-    displayTemples(temples.filter(t => t.area > 90000));
+    displayTemples(
+        temples.filter(temple => temple.area > 90000)
+    );
 });
 
-document.querySelector("#small").addEventListener("click", (e) => {
+document.querySelector("#small").addEventListener("click", function (e) {
     e.preventDefault();
     title.textContent = "Small Temples";
-    displayTemples(temples.filter(t => t.area < 10000));
+    displayTemples(
+        temples.filter(temple => temple.area < 20000)
+    );
 });
 
 document.querySelector("#year").textContent = new Date().getFullYear();
+
 document.querySelector("#lastModified").textContent =
     "Last Modified: " + document.lastModified;
