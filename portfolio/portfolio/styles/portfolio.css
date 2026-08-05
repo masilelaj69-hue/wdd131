@@ -1,21 +1,53 @@
+/* ==============================
+   RESET
+   ============================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
+/* ==============================
+   ROOT / BODY
+   ============================== */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     line-height: 1.6;
     background-color: #f5f5f5;
     color: #222;
 }
 
+
+/* ==============================
+   HEADINGS
+   ============================== */
+
 h1,
 h2,
 h3 {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", Arial, sans-serif;
+    line-height: 1.2;
 }
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+
+/* ==============================
+   GENERAL
+   ============================== */
 
 img {
     max-width: 100%;
@@ -27,31 +59,66 @@ a {
     text-decoration: none;
 }
 
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
 
-/* HEADER */
+button {
+    cursor: pointer;
+}
+
+
+/* ==============================
+   HEADER
+   ============================== */
 
 header {
     background-color: #1e3a8a;
     color: white;
     padding: 1rem;
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: 0 auto;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
 }
+
+
+/* Logo */
 
 .logo {
     color: #fbbf24;
+    font-family: "Poppins", sans-serif;
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 
+
+/* Mobile menu button */
+
 .menu-button {
-    background: none;
+    background: transparent;
     border: none;
     color: white;
     font-size: 1.8rem;
-    cursor: pointer;
+    padding: 0.25rem 0.5rem;
 }
+
+.menu-button:hover,
+.menu-button:focus {
+    color: #fbbf24;
+}
+
+
+/* Navigation */
 
 nav {
     display: none;
@@ -65,15 +132,24 @@ nav.open {
 
 nav a {
     color: white;
-    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    padding: 0.4rem 0;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
+    color: #fbbf24;
+}
+
+nav a.active {
     color: #fbbf24;
 }
 
 
-/* MAIN */
+/* ==============================
+   MAIN
+   ============================== */
 
 main {
     max-width: 1100px;
@@ -85,49 +161,175 @@ section {
     margin-bottom: 3rem;
 }
 
-section h2 {
+
+/* ==============================
+   PAGE HEADING
+   ============================== */
+
+.page-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 3rem;
+}
+
+.page-heading h1 {
     color: #1e3a8a;
     margin-bottom: 1rem;
 }
 
+.page-heading p:last-child {
+    font-size: 1.05rem;
+}
 
-/* HERO */
+
+/* ==============================
+   EYEBROW TEXT
+   ============================== */
+
+.eyebrow {
+    color: #1e3a8a;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12rem;
+    margin-bottom: 0.75rem;
+}
+
+
+/* ==============================
+   HERO
+   ============================== */
 
 .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
     background-color: white;
-    padding: 3rem 1.5rem;
-    text-align: center;
-    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero h1 {
     color: #1e3a8a;
-    font-size: 2.3rem;
     margin-bottom: 1rem;
+}
+
+.hero h1 span {
+    color: #1e3a8a;
 }
 
 .hero p {
     margin-bottom: 1.5rem;
 }
 
-.hero-button {
+.hero-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/* ==============================
+   BUTTONS
+   ============================== */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.button {
     display: inline-block;
+
     background-color: #fbbf24;
     color: #1e3a8a;
+
     padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    font-weight: bold;
+    border: 2px solid #fbbf24;
+    border-radius: 6px;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
-.hero-button:hover {
+.button:hover,
+.button:focus {
     background-color: #1e3a8a;
+    border-color: #1e3a8a;
     color: white;
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    background-color: transparent;
+    color: #1e3a8a;
+    border-color: #1e3a8a;
 }
 
 
-/* SKILLS */
+/* ==============================
+   WELCOME SECTION
+   ============================== */
 
-#skillsContainer {
+.welcome-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.welcome-section h2 {
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+}
+
+.welcome-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-top: 5px solid #fbbf24;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.welcome-card h3 {
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+}
+
+.welcome-card ul {
+    padding-left: 1.25rem;
+}
+
+.welcome-card li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* ==============================
+   SKILLS
+   ============================== */
+
+.skills-section h2 {
+    color: #1e3a8a;
+    margin-bottom: 1.5rem;
+}
+
+.skills-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -138,6 +340,14 @@ section h2 {
     padding: 1.5rem;
     border-radius: 8px;
     border-left: 5px solid #fbbf24;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
 }
 
 .skill-card h3 {
@@ -146,9 +356,38 @@ section h2 {
 }
 
 
-/* PROJECT FILTERS */
+/* ==============================
+   VISITOR MESSAGE
+   ============================== */
 
-.project-filters {
+.message-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    background-color: white;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.message-section h2 {
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+}
+
+.message-section form {
+    padding: 0;
+    box-shadow: none;
+}
+
+
+/* ==============================
+   PROJECT FILTERS
+   ============================== */
+
+.filter-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
@@ -159,22 +398,26 @@ section h2 {
     border: 2px solid #1e3a8a;
     background-color: white;
     color: #1e3a8a;
+
     padding: 0.6rem 1rem;
     border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
+
+    font-weight: 700;
 }
 
 .filter-button:hover,
-.active-filter {
+.filter-button:focus,
+.filter-button.active-filter {
     background-color: #1e3a8a;
     color: white;
 }
 
 
-/* PROJECTS */
+/* ==============================
+   PROJECTS
+   ============================== */
 
-#projectsContainer {
+.projects-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -184,7 +427,17 @@ section h2 {
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
+
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 .project-card img {
@@ -200,87 +453,212 @@ section h2 {
 .project-category {
     display: inline-block;
     color: #1e3a8a;
-    font-weight: bold;
+    font-size: 0.85rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .project-card h2 {
     color: #1e3a8a;
-    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.project-card p {
+    margin-bottom: 1rem;
+}
+
+.project-link {
+    color: #1e3a8a;
+    font-weight: 700;
+}
+
+.project-link:hover,
+.project-link:focus {
+    color: #b58100;
+    text-decoration: underline;
 }
 
 
-/* FORMS */
+/* ==============================
+   PROJECT NOTE
+   ============================== */
 
-form {
+.project-note {
+    background-color: white;
+    padding: 2rem 1.5rem;
+    border-left: 5px solid #fbbf24;
+    border-radius: 8px;
+}
+
+.project-note h2 {
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+}
+
+
+/* ==============================
+   CONTACT PAGE
+   ============================== */
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.contact-information h2 {
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+}
+
+.contact-card {
+    background-color: white;
+    padding: 1.25rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border-left: 5px solid #fbbf24;
+}
+
+.contact-card h3 {
+    color: #1e3a8a;
+    margin-bottom: 0.35rem;
+}
+
+
+/* ==============================
+   FORMS
+   ============================== */
+
+.contact-form {
     background-color: white;
     padding: 1.5rem;
     border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-label {
+.contact-form label {
     display: block;
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 0.4rem;
 }
 
-input,
-textarea {
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
     width: 100%;
+
     padding: 0.75rem;
     margin-bottom: 1rem;
-    border: 1px solid #aaa;
+
+    border: 1px solid #999;
     border-radius: 5px;
-    font: inherit;
+
+    background-color: white;
+    color: #222;
 }
 
-textarea {
+.contact-form textarea {
     min-height: 150px;
     resize: vertical;
 }
 
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: 3px solid rgba(251, 191, 36, 0.5);
+    border-color: #1e3a8a;
+}
+
+
+/* Checkbox */
+
+.checkbox-label {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    font-weight: 400 !important;
+}
+
+.checkbox-label input {
+    width: auto;
+    margin: 0.3rem 0 0;
+}
+
+
+/* Form button */
+
 form button {
-    background-color: #1e3a8a;
-    color: white;
     border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
 }
 
-form button:hover {
-    background-color: #fbbf24;
-    color: #1e3a8a;
-}
-
-#welcomeMessage,
-#formMessage {
+.form-message {
     margin-top: 1rem;
-    font-weight: bold;
+    font-weight: 700;
     color: #1e3a8a;
 }
 
 
-/* FOOTER */
+/* ==============================
+   FOOTER
+   ============================== */
 
 footer {
     background-color: #1e3a8a;
     color: white;
-    text-align: center;
     padding: 2rem 1rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    text-align: center;
+}
+
+.footer-content h2 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
 footer a {
     color: #fbbf24;
+    font-weight: 600;
 }
 
-footer a:hover {
+footer a:hover,
+footer a:focus {
     color: white;
 }
 
+.copyright {
+    max-width: 1100px;
+    margin: 1.5rem auto 0;
+    padding-top: 1rem;
 
-/* TABLET */
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+
+    text-align: center;
+}
+
+
+/* ==============================
+   TABLET
+   ============================== */
 
 @media screen and (min-width: 600px) {
 
@@ -294,40 +672,97 @@ footer a:hover {
 
     nav {
         display: flex;
+        align-items: center;
         gap: 1.5rem;
     }
 
-    #skillsContainer {
-        grid-template-columns: repeat(2, 1fr);
+    nav a {
+        padding: 0.4rem 0;
     }
 
-    #projectsContainer {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-    }
-}
-
-
-/* DESKTOP */
-
-@media screen and (min-width: 900px) {
 
     main {
         padding: 3rem 2rem;
     }
 
-    #skillsContainer {
-        grid-template-columns: repeat(4, 1fr);
+
+    .hero {
+        grid-template-columns: 1.2fr 1fr;
+        align-items: center;
+        padding: 3rem 2rem;
     }
 
-    #projectsContainer {
-        grid-template-columns: repeat(3, 1fr);
+
+    .hero h1 {
+        font-size: 3rem;
     }
+
+
+    .welcome-section {
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .contact-section {
+        grid-template-columns: 1fr 1.2fr;
+        align-items: start;
+    }
+
+
+    .message-section {
+        grid-template-columns: 1.2fr 1fr;
+        align-items: center;
+    }
+
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+
+    .footer-links {
+        justify-content: flex-end;
+    }
+
+}
+
+
+/* ==============================
+   DESKTOP
+   ============================== */
+
+@media screen and (min-width: 900px) {
 
     .hero {
         padding: 5rem 3rem;
     }
+
+
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    .contact-form {
+        padding: 2rem;
+    }
+
 }
