@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contact Julia Masilela about web development projects and opportunities."
+    >
+
+    <meta name="author" content="Julia Masilela">
+
+    <title>Julia Masilela | Contact</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles/portfolio.css">
+
+    <script src="scripts/portfolio.js" defer></script>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <a class="logo" href="index.html">
+            JM
+        </a>
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <nav id="mainNav">
+
+            <a href="index.html">Home</a>
+
+            <a href="projects.html">Projects</a>
+
+            <a class="active" href="contact.html">
+                Contact
+            </a>
+
+            <a href="references.html">
+                References
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="page-heading">
+
+        <p class="eyebrow">GET IN TOUCH</p>
+
+        <h1>Contact Me</h1>
+
+        <p>
+            Have a question or want to connect? Use the form below
+            to send a message.
+        </p>
+
+    </section>
+
+
+    <section class="contact-section">
+
+        <div class="contact-information">
+
+            <p class="eyebrow">CONTACT</p>
+
+            <h2>Let's Connect</h2>
+
+            <p>
+                I am interested in learning, developing new skills,
+                and connecting with people who are interested in
+                technology and web development.
+            </p>
+
+            <div class="contact-card">
+
+                <h3>Email</h3>
+
+                <p>
+                    julia@example.com
+                </p>
+
+            </div>
+
+            <div class="contact-card">
+
+                <h3>Location</h3>
+
+                <p>
+                    South Africa
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form
+            id="contactForm"
+            class="contact-form"
+            method="get"
+            action="contact.html"
+        >
+
+            <label for="name">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+            >
+
+
+            <label for="email">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+            >
+
+
+            <label for="subject">
+                Subject
+            </label>
+
+            <select
+                id="subject"
+                name="subject"
+                required
+            >
+
+                <option
+                    value=""
+                    disabled
+                    selected
+                >
+                    Select a subject
+                </option>
+
+                <option value="project">
+                    Project
+                </option>
+
+                <option value="question">
+                    General Question
+                </option>
+
+                <option value="opportunity">
+                    Opportunity
+                </option>
+
+                <option value="other">
+                    Other
+                </option>
+
+            </select>
+
+
+            <label for="message">
+                Message
+            </label>
+
+            <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+            ></textarea>
+
+
+            <label class="checkbox-label">
+
+                <input
+                    type="checkbox"
+                    id="updates"
+                    name="updates"
+                >
+
+                I would like to receive occasional updates.
+
+            </label>
+
+
+            <button
+                type="submit"
+                class="button"
+            >
+                Send Message
+            </button>
+
+
+            <p
+                id="formMessage"
+                class="form-message"
+                aria-live="polite"
+            ></p>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <h2>Julia Masilela</h2>
+
+            <p>
+                Web development portfolio and learning journey.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="projects.html">Projects</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="references.html">References</a>
+
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        &copy; <span id="year"></span> Julia Masilela
+    </p>
+
+</footer>
+
+</body>
+</html>

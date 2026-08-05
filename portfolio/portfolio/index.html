@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Julia Masilela's web development portfolio showcasing projects, skills, and experience."
+    >
+
+    <meta name="author" content="Julia Masilela">
+
+    <title>Julia Masilela | Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles/portfolio.css">
+    <script src="scripts/portfolio.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <div class="header-content">
+
+        <a class="logo" href="index.html">
+            JM
+        </a>
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <nav id="mainNav">
+            <a class="active" href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="references.html">References</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <p class="eyebrow">WEB DEVELOPMENT PORTFOLIO</p>
+
+            <h1>
+                Hi, I'm <span>Julia Masilela</span>
+            </h1>
+
+            <p>
+                Welcome to my portfolio. I am developing my skills in
+                HTML, CSS, JavaScript, and programming while building
+                creative and useful digital experiences.
+            </p>
+
+            <div class="hero-buttons">
+                <a class="button" href="projects.html">
+                    View My Projects
+                </a>
+
+                <a class="button secondary-button" href="contact.html">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="images/hero.webp"
+                alt="Laptop showing a web development project"
+                loading="lazy"
+            >
+        </div>
+
+    </section>
+
+
+    <section class="welcome-section">
+
+        <div>
+            <p class="eyebrow">WELCOME</p>
+
+            <h2>Building My Future Through Technology</h2>
+
+            <p>
+                This portfolio represents my journey as I learn web
+                development and programming. Each project gives me an
+                opportunity to practice problem solving, creativity,
+                organization, and technical skills.
+            </p>
+        </div>
+
+        <div class="welcome-card">
+
+            <h3>What I Do</h3>
+
+            <ul>
+                <li>Responsive Web Design</li>
+                <li>HTML and CSS Development</li>
+                <li>JavaScript Programming</li>
+                <li>Problem Solving</li>
+                <li>Project Development</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <section class="skills-section">
+
+        <p class="eyebrow">SKILLS</p>
+
+        <h2>Technologies I'm Learning</h2>
+
+        <div id="skillsContainer" class="skills-grid">
+        </div>
+
+    </section>
+
+
+    <section class="message-section">
+
+        <div>
+            <p class="eyebrow">VISITOR EXPERIENCE</p>
+
+            <h2 id="welcomeMessage">
+                Welcome to my portfolio!
+            </h2>
+
+            <p>
+                Enter your name and this website will remember it for
+                your next visit.
+            </p>
+        </div>
+
+        <form id="visitorForm">
+
+            <label for="visitorName">
+                Your Name
+            </label>
+
+            <input
+                type="text"
+                id="visitorName"
+                name="visitorName"
+                placeholder="Enter your name"
+                required
+            >
+
+            <button type="submit" class="button">
+                Save My Name
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <h2>Julia Masilela</h2>
+
+            <p>
+                Web development portfolio and learning journey.
+            </p>
+        </div>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="references.html">References</a>
+
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        &copy; <span id="year"></span> Julia Masilela
+    </p>
+
+</footer>
+
+</body>
+</html>
