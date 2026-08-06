@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="UTF-8">
@@ -19,7 +18,6 @@
 
     <title>Julia Masilela | Contact</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -28,333 +26,275 @@
         rel="stylesheet"
     >
 
-    <!-- CSS -->
     <link rel="stylesheet" href="styles/portfolio.css">
 
-    <!-- JavaScript -->
     <script src="scripts/portfolio.js" defer></script>
 
 </head>
 
-
 <body>
 
-    <!-- ================= HEADER ================= -->
+<header>
 
-    <header>
+    <div class="header-content">
 
-        <div class="header-content">
+        <a class="logo" href="index.html">
+            JM
+        </a>
 
-            <a class="logo" href="index.html">
-                JM
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <nav id="mainNav">
+
+            <a href="index.html">
+                Home
             </a>
 
-            <button
-                class="menu-button"
-                id="menuButton"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                type="button"
+            <a href="projects.html">
+                Projects
+            </a>
+
+            <a
+                class="active"
+                href="contact.html"
             >
-                ☰
-            </button>
+                Contact
+            </a>
 
-            <nav id="mainNav">
+            <a href="references.html">
+                References
+            </a>
 
-                <a href="index.html">
-                    Home
-                </a>
+        </nav>
 
-                <a href="projects.html">
-                    Projects
-                </a>
+    </div>
 
-                <a
-                    class="active"
-                    href="contact.html"
-                    aria-current="page"
-                >
-                    Contact
-                </a>
+</header>
 
-                <a href="references.html">
-                    References
-                </a>
 
-            </nav>
+<main>
 
-        </div>
+    <section class="page-heading">
 
-    </header>
-
-
-    <!-- ================= MAIN ================= -->
-
-    <main>
-
-        <!-- Page Heading -->
-
-        <section class="page-heading">
-
-            <p class="eyebrow">
-                GET IN TOUCH
-            </p>
-
-            <h1>
-                Contact Me
-            </h1>
-
-            <p>
-                Have a question or want to connect?
-                Use the form below to send a message.
-            </p>
-
-        </section>
-
-
-        <!-- Contact Section -->
-
-        <section class="contact-section">
-
-            <!-- Contact Information -->
-
-            <div class="contact-information">
-
-                <p class="eyebrow">
-                    CONTACT
-                </p>
-
-                <h2>
-                    Let's Connect
-                </h2>
-
-                <p>
-                    I am interested in learning, developing
-                    new skills, and connecting with people who
-                    are interested in technology and web
-                    development.
-                </p>
-
-
-                <div class="contact-card">
-
-                    <h3>
-                        Email
-                    </h3>
-
-                    <p>
-                        julia@example.com
-                    </p>
-
-                </div>
-
-
-                <div class="contact-card">
-
-                    <h3>
-                        Location
-                    </h3>
-
-                    <p>
-                        South Africa
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Contact Form -->
-
-            <form
-                id="contactForm"
-                class="contact-form"
-                method="get"
-                action="contact.html"
-            >
-
-                <!-- Name -->
-
-                <label for="name">
-                    Full Name
-                </label>
-
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    autocomplete="name"
-                    required
-                >
-
-
-                <!-- Email -->
-
-                <label for="email">
-                    Email Address
-                </label>
-
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    autocomplete="email"
-                    required
-                >
-
-
-                <!-- Subject -->
-
-                <label for="subject">
-                    Subject
-                </label>
-
-                <select
-                    id="subject"
-                    name="subject"
-                    required
-                >
-
-                    <option
-                        value=""
-                        disabled
-                        selected
-                    >
-                        Select a subject
-                    </option>
-
-                    <option value="project">
-                        Project
-                    </option>
-
-                    <option value="question">
-                        General Question
-                    </option>
-
-                    <option value="opportunity">
-                        Opportunity
-                    </option>
-
-                    <option value="other">
-                        Other
-                    </option>
-
-                </select>
-
-
-                <!-- Message -->
-
-                <label for="message">
-                    Message
-                </label>
-
-                <textarea
-                    id="message"
-                    name="message"
-                    rows="6"
-                    required
-                ></textarea>
-
-
-                <!-- Updates Checkbox -->
-
-                <label class="checkbox-label">
-
-                    <input
-                        type="checkbox"
-                        id="updates"
-                        name="updates"
-                        value="yes"
-                    >
-
-                    <span>
-                        I would like to receive occasional
-                        updates.
-                    </span>
-
-                </label>
-
-
-                <!-- Submit -->
-
-                <button
-                    type="submit"
-                    class="button"
-                >
-                    Send Message
-                </button>
-
-
-                <!-- JavaScript Message -->
-
-                <p
-                    id="formMessage"
-                    class="form-message"
-                    aria-live="polite"
-                ></p>
-
-            </form>
-
-        </section>
-
-    </main>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="footer-content">
-
-            <div>
-
-                <h2>
-                    Julia Masilela
-                </h2>
-
-                <p>
-                    Web development portfolio and learning
-                    journey.
-                </p>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="projects.html">
-                    Projects
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-                <a href="references.html">
-                    References
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <p class="copyright">
-
-            &copy;
-
-            <span id="year"></span>
-
-            Julia Masilela
-
+        <p class="eyebrow">
+            GET IN TOUCH
         </p>
 
-    </footer>
+        <h1>
+            Contact Me
+        </h1>
+
+        <p>
+            Have a question or want to connect? Use the form
+            below to send a message.
+        </p>
+
+    </section>
+
+
+    <section class="contact-section">
+
+        <div class="contact-information">
+
+            <p class="eyebrow">
+                CONTACT
+            </p>
+
+            <h2>
+                Let's Connect
+            </h2>
+
+            <p>
+                I am interested in learning, developing new skills,
+                and connecting with people who are interested in
+                technology and web development.
+            </p>
+
+
+            <div class="contact-card">
+
+                <h3>
+                    Email
+                </h3>
+
+                <p>
+                    julia.masilela@example.com
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>
+                    Location
+                </h3>
+
+                <p>
+                    South Africa
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form
+            id="contactForm"
+            class="contact-form"
+            method="get"
+            action="contact.html"
+        >
+
+            <label for="name">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+            >
+
+
+            <label for="email">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+            >
+
+
+            <label for="subject">
+                Subject
+            </label>
+
+            <select
+                id="subject"
+                name="subject"
+                required
+            >
+
+                <option
+                    value=""
+                    disabled
+                    selected
+                >
+                    Select a subject
+                </option>
+
+                <option value="project">
+                    Project
+                </option>
+
+                <option value="question">
+                    General Question
+                </option>
+
+                <option value="opportunity">
+                    Opportunity
+                </option>
+
+                <option value="other">
+                    Other
+                </option>
+
+            </select>
+
+
+            <label for="message">
+                Message
+            </label>
+
+            <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+            ></textarea>
+
+
+            <label class="checkbox-label">
+
+                <input
+                    type="checkbox"
+                    id="updates"
+                    name="updates"
+                >
+
+                I would like to receive occasional updates.
+
+            </label>
+
+
+            <button
+                type="submit"
+                class="button"
+            >
+                Send Message
+            </button>
+
+
+            <p
+                id="formMessage"
+                class="form-message"
+                aria-live="polite"
+            ></p>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <h2>
+                Julia Masilela
+            </h2>
+
+            <p>
+                Web development portfolio and learning journey.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="references.html">References</a>
+
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        &copy; <span id="year"></span> Julia Masilela
+    </p>
+
+</footer>
 
 </body>
-
 </html>

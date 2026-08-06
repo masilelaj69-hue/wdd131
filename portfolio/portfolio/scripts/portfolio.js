@@ -1,32 +1,40 @@
-// ==========================================
-// PORTFOLIO JAVASCRIPT
-// Julia Masilela
-// ==========================================
+/* ==============================
+   PORTFOLIO JAVASCRIPT
+============================== */
 
 
-// ==========================================
-// CURRENT YEAR
-// ==========================================
+/* ==============================
+   CURRENT YEAR
+============================== */
 
-const yearElement = document.querySelector("#year");
+function setCurrentYear() {
+    const yearElement = document.querySelector("#year");
 
-if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 }
 
+setCurrentYear();
 
-// ==========================================
-// MOBILE NAVIGATION
-// ==========================================
 
-const menuButton = document.querySelector("#menuButton");
-const mainNav = document.querySelector("#mainNav");
+/* ==============================
+   MOBILE NAVIGATION
+============================== */
 
-if (menuButton && mainNav) {
+function setupNavigation() {
+    const menuButton = document.querySelector("#menuButton");
+    const mainNav = document.querySelector("#mainNav");
+
+    if (!menuButton || !mainNav) {
+        return;
+    }
 
     menuButton.addEventListener("click", () => {
 
-        const isOpen = mainNav.classList.toggle("open");
+        mainNav.classList.toggle("open");
+
+        const isOpen = mainNav.classList.contains("open");
 
         menuButton.setAttribute(
             "aria-expanded",
@@ -39,362 +47,317 @@ if (menuButton && mainNav) {
                 ? "Close navigation menu"
                 : "Open navigation menu"
         );
-
-        menuButton.textContent = isOpen ? "✕" : "☰";
-
     });
-
 }
 
+setupNavigation();
 
-// ==========================================
-// SKILLS
-// ==========================================
+
+/* ==============================
+   SKILLS OBJECT ARRAY
+============================== */
 
 const skills = [
     {
         name: "HTML",
-        description: "Creating well-structured and accessible web pages."
+        description: "Creating semantic and accessible web pages."
     },
-
     {
         name: "CSS",
-        description: "Designing responsive layouts and user-friendly interfaces."
+        description: "Designing responsive layouts and visual styles."
     },
-
     {
         name: "JavaScript",
-        description: "Adding interactivity and dynamic functionality to websites."
+        description: "Adding interaction and dynamic functionality."
     },
-
     {
         name: "C#",
-        description: "Learning programming concepts, problem solving, and object-oriented programming."
+        description: "Learning programming concepts and problem solving."
     }
 ];
 
 
-const skillsContainer =
-    document.querySelector("#skillsContainer");
+/* ==============================
+   DISPLAY SKILLS
+============================== */
 
+function displaySkills() {
 
-if (skillsContainer) {
+    const skillsContainer =
+        document.querySelector("#skillsContainer");
 
-    skills.forEach((skill) => {
+    if (!skillsContainer) {
+        return;
+    }
 
-        const article = document.createElement("article");
-
-        article.classList.add("skill-card");
-
-        article.innerHTML = `
-            <h3>${skill.name}</h3>
-            <p>${skill.description}</p>
-        `;
-
-        skillsContainer.appendChild(article);
-
-    });
-
+    skillsContainer.innerHTML = skills.map(
+        (skill) => `
+            <article class="skill-card">
+                <h3>${skill.name}</h3>
+                <p>${skill.description}</p>
+            </article>
+        `
+    ).join("");
 }
 
+displaySkills();
 
-// ==========================================
-// PROJECTS
-// ==========================================
+
+/* ==============================
+   PROJECT OBJECT ARRAY
+============================== */
 
 const projects = [
-
     {
-        title: "Personal Portfolio Website",
+        title: "Personal Portfolio",
         category: "web",
         categoryName: "Web Development",
         description:
-            "A responsive personal portfolio website created using HTML, CSS, and JavaScript.",
+            "A responsive portfolio website created using HTML, CSS, and JavaScript.",
         image: "images/portfolio.webp"
     },
 
     {
-        title: "Product Review Form",
+        title: "Dynamic Web Fundamentals",
         category: "web",
         categoryName: "Web Development",
         description:
-            "A responsive product review form that collects user information and displays a confirmation page.",
+            "A course project demonstrating responsive design, HTML, CSS, and JavaScript.",
+        image: "images/hero.webp"
+    },
+
+    {
+        title: "Programming Practice",
+        category: "programming",
+        categoryName: "Programming",
+        description:
+            "Programming exercises focused on problem solving, logic, and reusable code.",
         image: "images/portfolio.webp"
     },
 
     {
-        title: "Temple Explorer",
+        title: "JavaScript Interactions",
+        category: "programming",
+        categoryName: "Programming",
+        description:
+            "Interactive features using JavaScript events, DOM manipulation, and functions.",
+        image: "images/hero.webp"
+    },
+
+    {
+        title: "Responsive Web Design",
         category: "web",
         categoryName: "Web Development",
         description:
-            "A dynamic web page that displays temple information and allows users to filter the displayed temples.",
+            "Responsive layouts designed to work across mobile, tablet, and desktop screens.",
         image: "images/portfolio.webp"
     },
 
     {
-        title: "C# Recursion Programs",
+        title: "Problem Solving Exercises",
         category: "programming",
         categoryName: "Programming",
         description:
-            "A collection of programming exercises demonstrating recursion and problem-solving techniques.",
-        image: "images/portfolio.webp"
-    },
-
-    {
-        title: "Eternal Quest",
-        category: "programming",
-        categoryName: "Programming",
-        description:
-            "A C# goal-tracking program designed to practice object-oriented programming concepts.",
-        image: "images/portfolio.webp"
-    },
-
-    {
-        title: "Exercise Tracking Program",
-        category: "programming",
-        categoryName: "Programming",
-        description:
-            "A C# program that demonstrates programming concepts through exercise tracking.",
-        image: "images/portfolio.webp"
+            "Programming exercises that strengthen logical thinking and computational skills.",
+        image: "images/hero.webp"
     }
-
 ];
 
 
-// ==========================================
-// DISPLAY PROJECTS
-// ==========================================
-
-const projectsContainer =
-    document.querySelector("#projectsContainer");
-
+/* ==============================
+   DISPLAY PROJECTS
+============================== */
 
 function displayProjects(projectList) {
+
+    const projectsContainer =
+        document.querySelector("#projectsContainer");
 
     if (!projectsContainer) {
         return;
     }
 
+    projectsContainer.innerHTML = projectList.map(
+        (project) => `
+            <article class="project-card">
 
-    projectsContainer.innerHTML = "";
+                <img
+                    src="${project.image}"
+                    alt="${project.title}"
+                    width="600"
+                    height="400"
+                    loading="lazy"
+                >
+
+                <div class="project-content">
+
+                    <span class="project-category">
+                        ${project.categoryName}
+                    </span>
+
+                    <h2>
+                        ${project.title}
+                    </h2>
+
+                    <p>
+                        ${project.description}
+                    </p>
+
+                </div>
+
+            </article>
+        `
+    ).join("");
+}
+
+displayProjects(projects);
 
 
-    if (projectList.length === 0) {
+/* ==============================
+   PROJECT FILTERING
+============================== */
 
-        projectsContainer.innerHTML = `
-            <p>
-                No projects found in this category.
-            </p>
-        `;
+function setupProjectFilters() {
 
+    const filterButtons =
+        document.querySelectorAll(".filter-button");
+
+    if (!filterButtons.length) {
         return;
     }
-
-
-    projectList.forEach((project) => {
-
-        const article = document.createElement("article");
-
-        article.classList.add("project-card");
-
-
-        article.innerHTML = `
-            <img
-                src="${project.image}"
-                alt="${project.title} project"
-                loading="lazy"
-                width="800"
-                height="500"
-            >
-
-            <div class="project-content">
-
-                <span class="project-category">
-                    ${project.categoryName}
-                </span>
-
-                <h2>
-                    ${project.title}
-                </h2>
-
-                <p>
-                    ${project.description}
-                </p>
-
-            </div>
-        `;
-
-
-        projectsContainer.appendChild(article);
-
-    });
-
-}
-
-
-// Display all projects when the Projects page loads
-
-if (projectsContainer) {
-    displayProjects(projects);
-}
-
-
-// ==========================================
-// PROJECT FILTERS
-// ==========================================
-
-const filterButtons =
-    document.querySelectorAll(".filter-button");
-
-
-if (filterButtons.length > 0) {
 
     filterButtons.forEach((button) => {
 
         button.addEventListener("click", () => {
 
-            const category =
-                button.dataset.category;
-
-
-            // Remove active class from every button
-
-            filterButtons.forEach((filterButton) => {
-
-                filterButton.classList.remove(
-                    "active-filter"
-                );
-
+            filterButtons.forEach((item) => {
+                item.classList.remove("active-filter");
             });
 
+            button.classList.add("active-filter");
 
-            // Add active class to clicked button
-
-            button.classList.add(
-                "active-filter"
-            );
-
-
-            // Show all projects
+            const category =
+                button.dataset.category;
 
             if (category === "all") {
 
                 displayProjects(projects);
 
-                return;
+            } else {
 
+                const filteredProjects =
+                    projects.filter(
+                        (project) =>
+                            project.category === category
+                    );
+
+                displayProjects(filteredProjects);
             }
-
-
-            // Filter projects
-
-            const filteredProjects =
-                projects.filter(
-                    (project) =>
-                        project.category === category
-                );
-
-
-            displayProjects(filteredProjects);
-
         });
-
     });
-
 }
 
-
-// ==========================================
-// VISITOR NAME / LOCAL STORAGE
-// ==========================================
-
-const visitorForm =
-    document.querySelector("#visitorForm");
-
-const visitorNameInput =
-    document.querySelector("#visitorName");
-
-const welcomeMessage =
-    document.querySelector("#welcomeMessage");
+setupProjectFilters();
 
 
-const savedName =
-    localStorage.getItem("portfolioVisitorName");
+/* ==============================
+   VISITOR LOCAL STORAGE
+============================== */
 
+function setupVisitorForm() {
 
-if (savedName && welcomeMessage) {
+    const visitorForm =
+        document.querySelector("#visitorForm");
 
-    welcomeMessage.textContent =
-        `Welcome back, ${savedName}!`;
+    const visitorName =
+        document.querySelector("#visitorName");
 
-}
+    const welcomeMessage =
+        document.querySelector("#welcomeMessage");
 
+    if (
+        !visitorForm ||
+        !visitorName ||
+        !welcomeMessage
+    ) {
+        return;
+    }
 
-if (visitorForm) {
+    const savedName =
+        localStorage.getItem("portfolioVisitor");
+
+    if (savedName) {
+
+        welcomeMessage.textContent =
+            `Welcome back, ${savedName}!`;
+
+        visitorName.value = savedName;
+    }
 
     visitorForm.addEventListener("submit", (event) => {
 
         event.preventDefault();
 
+        const name =
+            visitorName.value.trim();
 
-        const visitorName =
-            visitorNameInput.value.trim();
+        if (name.length > 0) {
 
-
-        if (visitorName === "") {
-            return;
-        }
-
-
-        localStorage.setItem(
-            "portfolioVisitorName",
-            visitorName
-        );
-
-
-        if (welcomeMessage) {
+            localStorage.setItem(
+                "portfolioVisitor",
+                name
+            );
 
             welcomeMessage.textContent =
-                `Welcome, ${visitorName}!`;
+                `Welcome to my portfolio, ${name}!`;
 
+            visitorForm.reset();
+
+            visitorName.focus();
         }
-
-
-        visitorForm.reset();
-
     });
-
 }
 
-
-// ==========================================
-// CONTACT FORM
-// ==========================================
-
-const contactForm =
-    document.querySelector("#contactForm");
-
-const formMessage =
-    document.querySelector("#formMessage");
+setupVisitorForm();
 
 
-if (contactForm) {
+/* ==============================
+   CONTACT FORM
+============================== */
+
+function setupContactForm() {
+
+    const contactForm =
+        document.querySelector("#contactForm");
+
+    const formMessage =
+        document.querySelector("#formMessage");
+
+    if (!contactForm || !formMessage) {
+        return;
+    }
 
     contactForm.addEventListener("submit", (event) => {
 
         event.preventDefault();
 
+        const name =
+            document.querySelector("#name").value.trim();
 
-        if (formMessage) {
+        if (name) {
 
             formMessage.textContent =
-                "Thank you! Your message has been received.";
+                `Thank you, ${name}! Your message has been received.`;
+
+            contactForm.reset();
+
+        } else {
+
+            formMessage.textContent =
+                "Please complete the required fields.";
 
         }
-
-
-        contactForm.reset();
-
     });
-
 }
+
+setupContactForm();

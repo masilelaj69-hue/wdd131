@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="UTF-8">
@@ -12,275 +11,183 @@
 
     <meta
         name="description"
-        content="Explore Julia Masilela's web development projects."
+        content="Explore Julia Masilela's web development and programming projects."
     >
 
     <meta name="author" content="Julia Masilela">
 
     <title>Julia Masilela | Projects</title>
 
-
-    <!-- Google Fonts -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap"
         rel="stylesheet"
     >
 
+    <link rel="stylesheet" href="styles/portfolio.css">
 
-    <!-- CSS -->
-
-    <link
-        rel="stylesheet"
-        href="styles/portfolio.css"
-    >
-
-
-    <!-- JavaScript -->
-
-    <script
-        src="scripts/portfolio.js"
-        defer
-    ></script>
+    <script src="scripts/portfolio.js" defer></script>
 
 </head>
 
-
 <body>
 
+<header>
 
-    <!-- ================= HEADER ================= -->
+    <div class="header-content">
 
-    <header>
+        <a class="logo" href="index.html">
+            JM
+        </a>
 
-        <div class="header-content">
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
 
+        <nav id="mainNav">
 
-            <!-- Logo -->
-
-            <a
-                class="logo"
-                href="index.html"
-            >
-                JM
+            <a href="index.html">
+                Home
             </a>
 
-
-            <!-- Mobile Menu -->
-
-            <button
-                class="menu-button"
-                id="menuButton"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                type="button"
+            <a
+                class="active"
+                href="projects.html"
             >
-                ☰
-            </button>
+                Projects
+            </a>
 
+            <a href="contact.html">
+                Contact
+            </a>
 
-            <!-- Navigation -->
+            <a href="references.html">
+                References
+            </a>
 
-            <nav id="mainNav">
+        </nav>
 
-                <a href="index.html">
-                    Home
-                </a>
+    </div>
 
-                <a
-                    class="active"
-                    href="projects.html"
-                    aria-current="page"
-                >
-                    Projects
-                </a>
+</header>
 
-                <a href="contact.html">
-                    Contact
-                </a>
 
-                <a href="references.html">
-                    References
-                </a>
+<main>
 
-            </nav>
+    <section class="page-heading">
 
-        </div>
-
-    </header>
-
-
-
-    <!-- ================= MAIN ================= -->
-
-    <main>
-
-
-        <!-- ================= PAGE HEADING ================= -->
-
-        <section class="page-heading">
-
-            <p class="eyebrow">
-                MY WORK
-            </p>
-
-
-            <h1>
-                My Projects
-            </h1>
-
-
-            <p>
-                Explore some of the projects I have completed
-                while learning web development and programming.
-            </p>
-
-        </section>
-
-
-
-        <!-- ================= PROJECTS ================= -->
-
-        <section class="projects-section">
-
-
-            <!-- Filter Buttons -->
-
-            <div
-                class="filter-buttons"
-                aria-label="Project filters"
-            >
-
-                <button
-                    type="button"
-                    class="filter-button active-filter"
-                    data-category="all"
-                >
-                    All Projects
-                </button>
-
-
-                <button
-                    type="button"
-                    class="filter-button"
-                    data-category="web"
-                >
-                    Web Development
-                </button>
-
-
-                <button
-                    type="button"
-                    class="filter-button"
-                    data-category="programming"
-                >
-                    Programming
-                </button>
-
-            </div>
-
-
-
-            <!-- JavaScript creates the projects here -->
-
-            <div
-                id="projectsContainer"
-                class="projects-grid"
-            >
-            </div>
-
-        </section>
-
-
-
-        <!-- ================= LEARNING JOURNEY ================= -->
-
-        <section class="project-note">
-
-            <h2>
-                My Learning Journey
-            </h2>
-
-
-            <p>
-                Each project has helped me develop my technical
-                and problem-solving skills. I continue to learn
-                by creating, testing, fixing errors, and improving
-                my work.
-            </p>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="footer-content">
-
-
-            <div>
-
-                <h2>
-                    Julia Masilela
-                </h2>
-
-
-                <p>
-                    Web development portfolio and learning
-                    journey.
-                </p>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="projects.html">
-                    Projects
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-                <a href="references.html">
-                    References
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <p class="copyright">
-
-            &copy;
-
-            <span id="year"></span>
-
-            Julia Masilela
-
+        <p class="eyebrow">
+            MY WORK
         </p>
 
-    </footer>
+        <h1>
+            My Projects
+        </h1>
 
+        <p>
+            Explore some of the projects I have completed while
+            learning web development and programming.
+        </p>
+
+    </section>
+
+
+    <section class="projects-section">
+
+        <div class="filter-buttons">
+
+            <button
+                class="filter-button active-filter"
+                type="button"
+                data-category="all"
+            >
+                All Projects
+            </button>
+
+            <button
+                class="filter-button"
+                type="button"
+                data-category="web"
+            >
+                Web Development
+            </button>
+
+            <button
+                class="filter-button"
+                type="button"
+                data-category="programming"
+            >
+                Programming
+            </button>
+
+        </div>
+
+
+        <div
+            id="projectsContainer"
+            class="projects-grid"
+        ></div>
+
+    </section>
+
+
+    <section class="project-note">
+
+        <h2>
+            My Learning Journey
+        </h2>
+
+        <p>
+            Each project has helped me develop my technical and
+            problem-solving skills. I continue to learn by creating,
+            testing, fixing errors, and improving my work.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <h2>
+                Julia Masilela
+            </h2>
+
+            <p>
+                Web development portfolio and learning journey.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="references.html">References</a>
+
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        &copy; <span id="year"></span> Julia Masilela
+    </p>
+
+</footer>
 
 </body>
-
 </html>

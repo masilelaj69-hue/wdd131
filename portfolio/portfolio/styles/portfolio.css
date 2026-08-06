@@ -1,6 +1,6 @@
 /* ==============================
    RESET
-   ============================== */
+============================== */
 
 * {
     box-sizing: border-box;
@@ -8,10 +8,9 @@
     padding: 0;
 }
 
-
-/* ==============================
-   ROOT / BODY
-   ============================== */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: "Roboto", Arial, sans-serif;
@@ -20,39 +19,24 @@ body {
     color: #222;
 }
 
-
-/* ==============================
-   HEADINGS
-   ============================== */
-
 h1,
 h2,
 h3 {
     font-family: "Poppins", Arial, sans-serif;
-    line-height: 1.2;
 }
 
 h1 {
-    font-size: 2.5rem;
+    line-height: 1.2;
 }
 
 h2 {
-    font-size: 2rem;
+    line-height: 1.3;
 }
-
-h3 {
-    font-size: 1.25rem;
-}
-
-
-/* ==============================
-   GENERAL
-   ============================== */
 
 img {
+    display: block;
     max-width: 100%;
     height: auto;
-    display: block;
 }
 
 a {
@@ -61,64 +45,48 @@ a {
 
 button,
 input,
-select,
-textarea {
+textarea,
+select {
     font: inherit;
-}
-
-button {
-    cursor: pointer;
 }
 
 
 /* ==============================
    HEADER
-   ============================== */
+============================== */
 
 header {
     background-color: #1e3a8a;
     color: white;
-    padding: 1rem;
 }
 
 .header-content {
     max-width: 1100px;
     margin: 0 auto;
-
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
 }
-
-
-/* Logo */
 
 .logo {
     color: #fbbf24;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", Arial, sans-serif;
     font-size: 2rem;
     font-weight: 700;
 }
 
-
-/* Mobile menu button */
+.logo:hover {
+    color: white;
+}
 
 .menu-button {
     background: transparent;
     border: none;
     color: white;
     font-size: 1.8rem;
-    padding: 0.25rem 0.5rem;
+    cursor: pointer;
 }
-
-.menu-button:hover,
-.menu-button:focus {
-    color: #fbbf24;
-}
-
-
-/* Navigation */
 
 nav {
     display: none;
@@ -132,16 +100,11 @@ nav.open {
 
 nav a {
     color: white;
-    font-family: "Poppins", sans-serif;
     font-weight: 600;
-    padding: 0.4rem 0;
+    transition: color 0.2s ease;
 }
 
 nav a:hover,
-nav a:focus {
-    color: #fbbf24;
-}
-
 nav a.active {
     color: #fbbf24;
 }
@@ -149,9 +112,10 @@ nav a.active {
 
 /* ==============================
    MAIN
-   ============================== */
+============================== */
 
 main {
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
     padding: 2rem 1rem;
@@ -161,193 +125,166 @@ section {
     margin-bottom: 3rem;
 }
 
+section h2 {
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+}
+
 
 /* ==============================
-   PAGE HEADING
-   ============================== */
+   GENERAL
+============================== */
+
+.eyebrow {
+    color: #1e3a8a;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+}
 
 .page-heading {
     text-align: center;
-    max-width: 750px;
-    margin: 0 auto 3rem;
+    padding: 2rem 0;
 }
 
 .page-heading h1 {
     color: #1e3a8a;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
 .page-heading p:last-child {
-    font-size: 1.05rem;
-}
-
-
-/* ==============================
-   EYEBROW TEXT
-   ============================== */
-
-.eyebrow {
-    color: #1e3a8a;
-    font-family: "Poppins", sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.12rem;
-    margin-bottom: 0.75rem;
-}
-
-
-/* ==============================
-   HERO
-   ============================== */
-
-.hero {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-
-    background-color: white;
-    padding: 2rem 1.5rem;
-    border-radius: 12px;
-
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-.hero-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.hero h1 {
-    color: #1e3a8a;
-    margin-bottom: 1rem;
-}
-
-.hero h1 span {
-    color: #1e3a8a;
-}
-
-.hero p {
-    margin-bottom: 1.5rem;
-}
-
-.hero-image img {
-    width: 100%;
-    border-radius: 10px;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 
 /* ==============================
    BUTTONS
-   ============================== */
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
+============================== */
 
 .button {
     display: inline-block;
-
+    border: none;
     background-color: #fbbf24;
     color: #1e3a8a;
-
-    padding: 0.75rem 1.5rem;
-    border: 2px solid #fbbf24;
+    padding: 0.8rem 1.4rem;
     border-radius: 6px;
-
-    font-family: "Poppins", sans-serif;
     font-weight: 700;
-
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+    cursor: pointer;
+    transition: 0.2s ease;
 }
 
-.button:hover,
-.button:focus {
+.button:hover {
     background-color: #1e3a8a;
-    border-color: #1e3a8a;
     color: white;
-    transform: translateY(-2px);
 }
 
 .secondary-button {
-    background-color: transparent;
-    color: #1e3a8a;
-    border-color: #1e3a8a;
+    background-color: white;
+    border: 2px solid #fbbf24;
 }
 
 
 /* ==============================
-   WELCOME SECTION
-   ============================== */
+   HERO
+============================== */
+
+.hero {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    background-color: white;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.hero h1 {
+    color: #1e3a8a;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.hero h1 span {
+    color: #f59e0b;
+}
+
+.hero-text > p:not(.eyebrow) {
+    margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.hero-image {
+    width: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+/* ==============================
+   WELCOME
+============================== */
 
 .welcome-section {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 2rem;
     align-items: start;
 }
 
-.welcome-section h2 {
-    color: #1e3a8a;
-    margin-bottom: 1rem;
+.welcome-section > div:first-child {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
 }
 
 .welcome-card {
-    background-color: white;
-    padding: 1.5rem;
+    background-color: #1e3a8a;
+    color: white;
+    padding: 2rem;
     border-radius: 10px;
-    border-top: 5px solid #fbbf24;
-
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .welcome-card h3 {
-    color: #1e3a8a;
+    color: #fbbf24;
     margin-bottom: 1rem;
 }
 
 .welcome-card ul {
-    padding-left: 1.25rem;
-}
-
-.welcome-card li {
-    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
 }
 
 
 /* ==============================
    SKILLS
-   ============================== */
+============================== */
 
-.skills-section h2 {
-    color: #1e3a8a;
-    margin-bottom: 1.5rem;
+.skills-section {
+    text-align: center;
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .skill-card {
     background-color: white;
     padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 5px solid #fbbf24;
-
+    border-radius: 10px;
+    border-top: 5px solid #fbbf24;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-
-    transition: transform 0.2s ease;
-}
-
-.skill-card:hover {
-    transform: translateY(-4px);
 }
 
 .skill-card h3 {
@@ -358,34 +295,25 @@ section {
 
 /* ==============================
    VISITOR MESSAGE
-   ============================== */
+============================== */
 
 .message-section {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 2rem;
-
     background-color: white;
-    padding: 2rem 1.5rem;
+    padding: 2rem;
     border-radius: 10px;
-
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.message-section h2 {
-    color: #1e3a8a;
-    margin-bottom: 1rem;
 }
 
 .message-section form {
-    padding: 0;
     box-shadow: none;
+    padding: 0;
 }
 
 
 /* ==============================
    PROJECT FILTERS
-   ============================== */
+============================== */
 
 .filter-buttons {
     display: flex;
@@ -398,15 +326,13 @@ section {
     border: 2px solid #1e3a8a;
     background-color: white;
     color: #1e3a8a;
-
     padding: 0.6rem 1rem;
-    border-radius: 5px;
-
+    border-radius: 6px;
+    cursor: pointer;
     font-weight: 700;
 }
 
 .filter-button:hover,
-.filter-button:focus,
 .filter-button.active-filter {
     background-color: #1e3a8a;
     color: white;
@@ -415,7 +341,7 @@ section {
 
 /* ==============================
    PROJECTS
-   ============================== */
+============================== */
 
 .projects-grid {
     display: grid;
@@ -427,17 +353,7 @@ section {
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
-
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .project-card img {
@@ -453,145 +369,105 @@ section {
 .project-category {
     display: inline-block;
     color: #1e3a8a;
-    font-size: 0.85rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .project-card h2 {
     color: #1e3a8a;
-    font-size: 1.4rem;
     margin-bottom: 0.75rem;
 }
 
-.project-card p {
-    margin-bottom: 1rem;
-}
-
-.project-link {
-    color: #1e3a8a;
-    font-weight: 700;
-}
-
-.project-link:hover,
-.project-link:focus {
-    color: #b58100;
-    text-decoration: underline;
-}
-
-
-/* ==============================
-   PROJECT NOTE
-   ============================== */
-
 .project-note {
-    background-color: white;
-    padding: 2rem 1.5rem;
-    border-left: 5px solid #fbbf24;
-    border-radius: 8px;
+    background-color: #1e3a8a;
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
 }
 
 .project-note h2 {
-    color: #1e3a8a;
-    margin-bottom: 1rem;
+    color: #fbbf24;
 }
 
 
 /* ==============================
-   CONTACT PAGE
-   ============================== */
+   CONTACT
+============================== */
 
 .contact-section {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 2rem;
 }
 
-.contact-information h2 {
-    color: #1e3a8a;
-    margin-bottom: 1rem;
+.contact-information {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
 }
 
 .contact-card {
-    background-color: white;
-    padding: 1.25rem;
+    background-color: #f5f5f5;
+    padding: 1rem;
     margin-top: 1rem;
-    border-radius: 8px;
-    border-left: 5px solid #fbbf24;
+    border-left: 4px solid #fbbf24;
+    border-radius: 5px;
 }
 
 .contact-card h3 {
     color: #1e3a8a;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.25rem;
 }
 
 
 /* ==============================
    FORMS
-   ============================== */
+============================== */
 
-.contact-form {
+form {
     background-color: white;
     padding: 1.5rem;
     border-radius: 10px;
-
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.contact-form label {
+label {
     display: block;
     font-weight: 700;
     margin-bottom: 0.4rem;
 }
 
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
+input,
+textarea,
+select {
     width: 100%;
-
     padding: 0.75rem;
     margin-bottom: 1rem;
-
-    border: 1px solid #999;
-    border-radius: 5px;
-
+    border: 1px solid #aaa;
+    border-radius: 6px;
     background-color: white;
-    color: #222;
 }
 
-.contact-form textarea {
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid rgba(251, 191, 36, 0.4);
+    border-color: #1e3a8a;
+}
+
+textarea {
     min-height: 150px;
     resize: vertical;
 }
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-    outline: 3px solid rgba(251, 191, 36, 0.5);
-    border-color: #1e3a8a;
-}
-
-
-/* Checkbox */
-
 .checkbox-label {
-    display: flex !important;
-    align-items: flex-start;
-    gap: 0.6rem;
-    margin-bottom: 1.25rem;
-    font-weight: 400 !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .checkbox-label input {
     width: auto;
-    margin: 0.3rem 0 0;
-}
-
-
-/* Form button */
-
-form button {
-    border: none;
+    margin: 0;
 }
 
 .form-message {
@@ -602,25 +478,54 @@ form button {
 
 
 /* ==============================
+   REFERENCES
+============================== */
+
+.references-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.reference-list {
+    padding-left: 1.5rem;
+}
+
+.reference-list li {
+    margin-bottom: 1rem;
+}
+
+.reference-list a {
+    color: #1e3a8a;
+    font-weight: 700;
+}
+
+.reference-list a:hover {
+    color: #f59e0b;
+}
+
+.reference-nav {
+    display: flex;
+    gap: 1rem;
+}
+
+
+/* ==============================
    FOOTER
-   ============================== */
+============================== */
 
 footer {
     background-color: #1e3a8a;
     color: white;
+    text-align: center;
     padding: 2rem 1rem;
-    margin-top: 2rem;
 }
 
 .footer-content {
     max-width: 1100px;
     margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 1.5rem;
-
-    text-align: center;
 }
 
 .footer-content h2 {
@@ -635,34 +540,27 @@ footer {
     gap: 1rem;
 }
 
-footer a {
+.footer-links a {
     color: #fbbf24;
     font-weight: 600;
 }
 
-footer a:hover,
-footer a:focus {
+.footer-links a:hover {
     color: white;
 }
 
 .copyright {
-    max-width: 1100px;
-    margin: 1.5rem auto 0;
-    padding-top: 1rem;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-
-    text-align: center;
+    margin-top: 1.5rem;
 }
 
 
 /* ==============================
    TABLET
-   ============================== */
+============================== */
 
 @media screen and (min-width: 600px) {
 
-    header {
+    .header-content {
         padding: 1rem 2rem;
     }
 
@@ -672,97 +570,75 @@ footer a:focus {
 
     nav {
         display: flex;
-        align-items: center;
         gap: 1.5rem;
     }
 
-    nav a {
-        padding: 0.4rem 0;
-    }
-
-
-    main {
-        padding: 3rem 2rem;
-    }
-
-
     .hero {
-        grid-template-columns: 1.2fr 1fr;
-        align-items: center;
-        padding: 3rem 2rem;
+        grid-template-columns: 1fr 1fr;
+        padding: 3rem;
     }
-
 
     .hero h1 {
         font-size: 3rem;
     }
 
-
     .welcome-section {
-        grid-template-columns: 1.5fr 1fr;
+        grid-template-columns: 2fr 1fr;
     }
-
 
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-
     .contact-section {
         grid-template-columns: 1fr 1.2fr;
-        align-items: start;
     }
-
 
     .message-section {
-        grid-template-columns: 1.2fr 1fr;
+        grid-template-columns: 1fr 1fr;
         align-items: center;
     }
-
 
     .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        grid-template-columns: 1fr 1fr;
         text-align: left;
+        align-items: center;
     }
-
 
     .footer-links {
         justify-content: flex-end;
     }
-
 }
 
 
 /* ==============================
    DESKTOP
-   ============================== */
+============================== */
 
 @media screen and (min-width: 900px) {
 
-    .hero {
-        padding: 5rem 3rem;
+    main {
+        padding: 3rem 2rem;
     }
 
+    .hero {
+        padding: 4rem;
+    }
 
     .skills-grid {
         grid-template-columns: repeat(4, 1fr);
     }
 
-
     .projects-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-
-    .contact-form {
-        padding: 2rem;
+    .page-heading h1 {
+        font-size: 3rem;
     }
 
 }
